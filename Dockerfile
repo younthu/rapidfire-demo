@@ -1,11 +1,11 @@
-FROM ruby:2.6.3
+FROM ruby:2.6.3-alpine
 
 RUN apk add --no-cache build-base bash nodejs postgresql-dev yarn tzdata
 
 WORKDIR /app
 
 RUN gem install bundler
-RUN apt-get install libsqlite3-dev
+RUN apk add libsqlite3-dev
 
 COPY Gemfile ./
 COPY Gemfile.lock ./
