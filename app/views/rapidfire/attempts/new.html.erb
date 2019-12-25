@@ -43,7 +43,7 @@
       </div>
     <% end %>
   <% else %>
-    <%= render partial: 'form', locals: { submit_text: "Submit" } %>
+    <%= render partial: 'form', locals: { submit_text: @survey.tag_list.first == "survey1"? "下一步": "提交" } %>
     <hr/>
   <% end %>
 </div>
