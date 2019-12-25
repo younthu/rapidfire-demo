@@ -1,4 +1,4 @@
-FROM ruby:2.6.3-alpine
+FROM ruby:2.6.3
 
 RUN apk add --no-cache build-base bash nodejs postgresql-dev yarn tzdata
 
