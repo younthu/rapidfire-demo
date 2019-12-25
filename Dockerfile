@@ -5,7 +5,7 @@ RUN apk add --no-cache build-base bash nodejs postgresql-dev yarn tzdata
 WORKDIR /app
 
 RUN gem install bundler
-RUN apk add libsqlite3-dev
+RUN apk add sqlite-dev
 
 COPY Gemfile ./
 COPY Gemfile.lock ./
