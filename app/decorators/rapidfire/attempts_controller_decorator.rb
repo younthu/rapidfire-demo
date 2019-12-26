@@ -107,13 +107,13 @@ class Rapidfire::AttemptsControllerDecorator
         #
         # 综合业绩分类: VC	TOP 1%	TOP 1%	TOP 10%	NOT Top 10%
         over_performance = "TOP 1%"
-        a1 = attempt1.answers[0]
-        a11 = attempt1.answers[10]
+        a1 = attempt1.answers[0].answer_text
+        a11 = attempt1.answers[10].answer_text
         if a1 == "VC"
-          aa1 = attempta.answers[0]
-          aa2 = attempta.answers[1]
-          aa3 = attempta.answers[2]
-          aa4 = attempta.answers[3]
+          aa1 = attempta.answers[0].answer_text
+          aa2 = attempta.answers[1].answer_text
+          aa3 = attempta.answers[2].answer_text
+          aa4 = attempta.answers[3].answer_text
 
           if a11 == ">10" or aa1 == ">3" or aa2 == ">3" or aa3 == ">3" or aa4 == ">5"
             over_performance = "TOP 1%"
@@ -138,10 +138,10 @@ class Rapidfire::AttemptsControllerDecorator
         #
         # 综合业绩分类: GROWTH	TOP 1%	TOP 1%	TOP 10%	NOT Top 10%
         if a1 == "PE-GROWTH"
-          aa1 = attemptb.answers[0]
-          aa2 = attemptb.answers[1]
-          aa3 = attemptb.answers[2]
-          aa4 = attemptb.answers[3]
+          aa1 = attemptb.answers[0].answer_text
+          aa2 = attemptb.answers[1].answer_text
+          aa3 = attemptb.answers[2].answer_text
+          aa4 = attemptb.answers[3].answer_text
 
           if a11 == ">10" or aa1 == ">3" or aa3 == ">3"  or aa4 == ">5"
             over_performance = "TOP 1%"
@@ -164,10 +164,10 @@ class Rapidfire::AttemptsControllerDecorator
         #
         # 综合业绩分类: PE-BUYOUT	TOP 1%	TOP 1%	TOP 5%	NOT Top 10%
         if a1 == "PE-BUYOUT"
-          aa1 = attemptc.answers[0]
-          aa2 = attemptc.answers[1]
-          aa3 = attemptc.answers[2]
-          aa4 = attemptc.answers[3]
+          aa1 = attemptc.answers[0].answer_text
+          aa2 = attemptc.answers[1].answer_text
+          aa3 = attemptc.answers[2].answer_text
+          aa4 = attemptc.answers[3].answer_text
 
           if aa1 == ">10" or aa2 == ">3" or aa3 == ">3"
             over_performance = "TOP 1%"
