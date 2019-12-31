@@ -1,5 +1,5 @@
 default: &default
-  appid: wx1c4395f4a17baa83s
+  appid: wx1c4395f4a17baa83
   secret: 651e2f71c1f39005a02185994566b210
 #  token: wechat
 #  agentid:  1
