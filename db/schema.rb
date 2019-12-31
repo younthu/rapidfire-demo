@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_015516) do
+ActiveRecord::Schema.define(version: 2019_12_30_133329) do
 
   create_table "rapidfire_answers", force: :cascade do |t|
     t.integer "attempt_id"
@@ -93,6 +93,36 @@ ActiveRecord::Schema.define(version: 2019_12_25_015516) do
     t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wechat_configs", force: :cascade do |t|
+    t.string "environment", default: "development", null: false
+    t.string "account", null: false
+    t.boolean "enabled", default: true
+    t.string "appid"
+    t.string "secret"
+    t.string "corpid"
+    t.string "corpsecret"
+    t.integer "agentid"
+    t.boolean "encrypt_mode"
+    t.string "encoding_aes_key"
+    t.string "token", null: false
+    t.string "access_token", null: false
+    t.string "jsapi_ticket", null: false
+    t.boolean "skip_verify_ssl", default: true
+    t.integer "timeout", default: 20
+    t.string "trusted_domain_fullname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["environment", "account"], name: "index_wechat_configs_on_environment_and_account", unique: true
+  end
+
+  create_table "wechat_sessions", force: :cascade do |t|
+    t.string "openid", null: false
+    t.string "hash_store"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["openid"], name: "index_wechat_sessions_on_openid", unique: true
   end
 
   add_foreign_key "taggings", "tags"

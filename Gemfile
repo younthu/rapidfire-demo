@@ -20,6 +20,9 @@ gem 'webpacker', '~> 4.0'
 gem 'devise'
 gem 'acts-as-taggable-on', '~> 6.0'
 
+gem 'wechat'
+
+
 group :development, :test do
   gem 'byebug'
 end
